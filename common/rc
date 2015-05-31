@@ -1113,14 +1113,14 @@ _require_scratch_nocheck()
 		fi
 		;;
 	*)
-		 if [ -z "$SCRATCH_DEV" -o "`_is_block_dev "$SCRATCH_DEV"`" = "" ]
-		 then
-		     _notrun "this test requires a valid \$SCRATCH_DEV"
-		 fi
-		 if [ "`_is_block_dev "$SCRATCH_DEV"`" = "`_is_block_dev "$TEST_DEV"`" ]
-		 then
-		     _notrun "this test requires a valid \$SCRATCH_DEV"
-		 fi
+		# if [ -z "$SCRATCH_DEV" -o "`_is_block_dev "$SCRATCH_DEV"`" = "" ]
+		# then
+		#     _notrun "this test requires a valid \$SCRATCH_DEV"
+		 #fi
+		# if [ "`_is_block_dev "$SCRATCH_DEV"`" = "`_is_block_dev "$TEST_DEV"`" ]
+		# then
+		#     _notrun "this test requires a valid \$SCRATCH_DEV"
+		# fi
 		if [ ! -d "$SCRATCH_MNT" ]
 		then
 		     _notrun "this test requires a valid \$SCRATCH_MNT"
@@ -1187,14 +1187,14 @@ _require_test()
 		fi
 		;;
 	*)
-		 if [ -z "$TEST_DEV" ] || [ "`_is_block_dev "$TEST_DEV"`" = "" ]
-		 then
-		     _notrun "this test requires a valid \$TEST_DEV"
-		 fi
-		 if [ "`_is_block_dev "$SCRATCH_DEV"`" = "`_is_block_dev "$TEST_DEV"`" ]
-		 then
-		     _notrun "this test requires a valid \$TEST_DEV"
-		 fi
+		# if [ -z "$TEST_DEV" ] || [ "`_is_block_dev "$TEST_DEV"`" = "" ]
+		# then
+		#     _notrun "this test requires a valid \$TEST_DEV"
+		# fi
+		# if [ "`_is_block_dev "$SCRATCH_DEV"`" = "`_is_block_dev "$TEST_DEV"`" ]
+		# then
+		#     _notrun "this test requires a valid \$TEST_DEV"
+		# fi
 		if [ ! -d "$TEST_DIR" ]
 		then
 		     _notrun "this test requires a valid \$TEST_DIR"
