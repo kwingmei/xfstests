@@ -44,6 +44,7 @@ _supported_fs generic
 _supported_os Linux #IRIX
 _require_scratch
 _require_quota
+_require_odirect
 _require_user
 _require_group
 
