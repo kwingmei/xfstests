@@ -1,0 +1,6 @@
+# QA groups control
+#
+# define groups and default group owners
+# do not start group name with a digit
+#
+001 auto quick mkfs
