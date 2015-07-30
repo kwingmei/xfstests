@@ -1106,7 +1106,7 @@ _require_scratch_nocheck()
 		     _notrun "this test requires a valid \$SCRATCH_MNT"
 		fi
 		;;
-	tmpfs)
+	tmpfs|ubifs)
 		if [ -z "$SCRATCH_DEV" -o ! -d "$SCRATCH_MNT" ];
 		then
 		    _notrun "this test requires a valid \$SCRATCH_MNT and unique $SCRATCH_DEV"
@@ -1180,7 +1180,7 @@ _require_test()
 		     _notrun "this test requires a valid \$TEST_DIR"
 		fi
 		;;
-	tmpfs)
+	tmpfs|ubifs)
 		if [ -z "$TEST_DEV" -o ! -d "$TEST_DIR" ];
 		then
 		    _notrun "this test requires a valid \$TEST_DIR and unique $TEST_DEV"
@@ -2054,6 +2054,8 @@ _check_test_fs()
     tmpfs)
 	# no way to check consistency for tmpfs
 	;;
+    ubifs)
+	;;
     *)
 	_check_generic_filesystem $TEST_DEV
 	;;
@@ -2091,6 +2093,8 @@ _check_scratch_fs()
 	;;
     tmpfs)
 	# no way to check consistency for tmpfs
+	;;
+    ubifs)
 	;;
     *)
 	_check_generic_filesystem $device
